@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	 	<style type="text/css">
+	 	.click-box
+	 	{height: 200px;color: white;font:40px "微软雅黑";text-align: center;}
+        * {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            background: #000;
+            overflow: hidden;
+        }
+ 
+        .threeD {
+            transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+ 
+        .content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            transform-origin: 50% 50% -100px;
+            -ms-transform-origin: 50% 50% -200px;
+            -webkit-transform-origin: 50% 50% -200px;
+            animation: allRot2 20s linear infinite;
+            -ms-animation: allRot2 20s linear infinite;
+            -webkit-animation: allRot2 20s linear infinite;
+            /*perspective: 400px;*/
+        }
+ 
+        .cube {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 20px;
+            bottom: 0;
+            margin: auto;
+            transform: rotateX(60deg);
+            -ms-transform: rotateX(60deg);
+            -webkit-transform: rotateX(60deg);
+        }
+ 
+            .cube > div {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+ 
+        @keyframes allRot {
+            0% {
+                transform: rotateX(0deg);
+            }
+ 
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+ 
+        @keyframes allRot2 {
+            0% {
+                transform: rotate3d(1,1,0,0deg) rotateX(0deg) rotateY(0deg);
+                -ms-transform: rotate3d(1,1,0,0deg) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: rotate3d(1,1,0,0deg) rotateX(0deg) rotateY(0deg);
+            }
+ 
+            100% {
+                transform: rotate3d(1,1,0,360deg) rotateX(360deg) rotateY(360deg);
+                -ms-transform: rotate3d(1,1,0,360deg) rotateX(360deg) rotateY(360deg);
+                -webkit-transform: rotate3d(1,1,0,360deg) rotateX(360deg) rotateY(360deg);
+            }
+        }
+ 
+        .big {
+            width: 200px;
+            height: 200px;
+        }
+ 
+            .big > div {
+                opacity: 0.7;
+                transform-origin: 50% 50% -100px;
+                -ms-transform-origin: 50% 50% -100px;
+                -webkit-transform-origin: 50% 50% -100px;
+            }
+ 
+            .big :hover > div {
+                opacity: 1;
+            }
+ 
+        .small {
+            width: 100px;
+            height: 100px;
+            transform: rotateX(60deg) rotateZ(180deg) translateZ(-50px);
+            -ms-transform: rotateX(60deg) rotateZ(180deg) translateZ(-50px);
+            -webkit-transform: rotateX(60deg) rotateZ(180deg) translateZ(-50px);
+        }
+ 
+            .small > div {
+                transform-origin: 50% 50% -50px;
+                -ms-transform-origin: 50% 50% -50px;
+                -webkit-transform-origin: 50% 50% -50px;
+            }
+ 
+        .cube > div > img {
+            width: 100%;
+            height: 100%;
+        }
+        /*正面*/
+        .cube > div:nth-child(1) {
+            top: 0px;
+            left: 0px;
+        }
+        /*上面*/
+        .cube > div:nth-child(2) {
+            transform: rotateX(90deg);
+            -ms-transform: rotateX(90deg);
+            -webkit-transform: rotateX(90deg);
+        }
+        /*右面*/
+        .cube > div:nth-child(3) {
+            transform: rotateY(-90deg);
+            -ms-transform: rotateY(-90deg);
+            -webkit-transform: rotateY(-90deg);
+        }
+        /*左面*/
+        .cube > div:nth-child(4) {
+            transform: rotateY(90deg);
+            -ms-transform: rotateY(90deg);
+            -webkit-transform: rotateY(90deg);
+        }
+        /*下面*/
+        .cube > div:nth-child(5) {
+            transform: rotateX(-90deg);
+            -ms-transform: rotateX(-90deg);
+            -webkit-transform: rotateX(-90deg);
+        }
+ 
+        /*后面*/
+        .cube > div:nth-child(6) {
+            transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
+ 
+        /*正面*/
+        .big:hover > div:nth-child(1) {
+            transform: translateZ(100px);
+        }
+        /*上面*/
+        .big:hover > div:nth-child(2) {
+            transform: rotateX(90deg) translateZ(100px);
+            -ms-transform: rotateX(90deg) translateZ(100px);
+            -webkit-transform: rotateX(90deg) translateZ(100px);
+        }
+        /*右面*/
+        .big:hover > div:nth-child(3) {
+            transform: rotateY(-90deg) translateZ(100px);
+            -ms-transform: rotateY(-90deg) translateZ(100px);
+            -webkit-transform: rotateY(-90deg) translateZ(100px);
+        }
+        /*左面*/
+        .big:hover > div:nth-child(4) {
+            transform: rotateY(90deg)translateZ(100px);
+            -ms-transform: rotateY(90deg)translateZ(100px);
+            -webkit-transform: rotateY(90deg)translateZ(100px);
+        }
+        /*下面*/
+        .big:hover > div:nth-child(5) {
+            transform: rotateX(-90deg)translateZ(100px);
+            -ms-transform: rotateX(-90deg)translateZ(100px);
+            -webkit-transform: rotateX(-90deg)translateZ(100px);
+        }
+ 
+        /*后面*/
+        .big:hover > div:nth-child(6) {
+            transform: rotateY(180deg)translateZ(100px);
+            -ms-transform: rotateY(180deg)translateZ(100px);
+            -webkit-transform: rotateY(180deg)translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+	<div class="click-box">点击立方体进入首页</div>
+    <div class="threeD content">
+        <div class="threeD cube big">
+            <div><img src="img/IMG_1623.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1624.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1650.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1624.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1623.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1649.JPG" alt="" /> </div>
+        </div>
+        <div class="threeD cube small">
+            <div><img src="img/IMG_1627.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1628.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1629.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1630.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1631.JPG" alt="" /> </div>
+            <div><img src="img/IMG_1632.JPG" alt="" /> </div>
+        </div>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>
+			$('.threeD').click(function(){
+				window.location.href='display.html'
+			});
+		</script>
+	</body>
+</html>
